@@ -51,7 +51,7 @@
          {
             
             return value * factorial(value - 1);
-            
+
          }
         //TODO
         
@@ -137,6 +137,7 @@
         {
             //TODO
             return children;
+            
         }
 
         public void add(Tree child)
@@ -172,9 +173,15 @@
         if (height == 1)
         {
             //TODO
+            return 1;
         }
         //TODO
-        return 1;
+        else
+        {
+            return nnaryTreeSize(branchingFactor, height - 1);
+            
+        }
+       
     }
 
     /**
@@ -188,6 +195,7 @@
     public int treeSum(Tree tree)
     {
         //TODO
+        
         return 1;
     }
 
