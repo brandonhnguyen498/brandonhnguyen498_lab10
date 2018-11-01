@@ -36,7 +36,7 @@
         //TODO
         if (value == 1)
         {
-            return value;
+            return 1;
         }
 
         /*
@@ -44,14 +44,14 @@
          * Something is altered when the function makes a new call to itself. In this case, the value
          * is updated. Specifically, it is decremented by 1.
          * 
-         * By doing this, we break up the equation n! into n! = n * (n-1)!.
+         * By doing this, we break up the equation n! into n! = n * (n-1)!
          */
          
          else
          {
-            --value;
-            value = value * factorial(value - 1);
-            return value;
+            
+            return value * factorial(value - 1);
+            
          }
         //TODO
         
@@ -79,12 +79,18 @@
     {
 
         //TODO
-        if (n == 1)
+        if (n == 0)
         {
-            return n;
+            return 0;
         }
-        n = fibonacci(n-1) + fibonacci(n-2);
-        return n;
+        else if (n == 1)
+        {
+            return 1;
+        }
+        else
+        {
+            return fibonacci(n-1) + fibonacci(n-2);
+        }
 
     }
         /**
