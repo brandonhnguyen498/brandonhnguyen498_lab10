@@ -53,7 +53,7 @@
             return value * factorial(value - 1);
 
          }
-        //TODO
+        
         
         
 
@@ -117,13 +117,14 @@
 
     protected final class Tree
     {
-        private ArrayList<Tree> children;
+        private ArrayList<Tree> children = new ArrayList<>();
         private int value;
 
         public Tree(int value)
         {
             //TODO
             this.value = value;
+            
             
         }
 
@@ -170,15 +171,19 @@
      */
     public int nnaryTreeSize(int branchingFactor, int height)
     {
-        if (height == 1)
+        if (height == 0)
         {
             //TODO
-            return 1;
+            return 0;
         }
         //TODO
+        else if (height == 1)
+        {
+            return 1; // the base case
+        }
         else
         {
-            return nnaryTreeSize(branchingFactor, height - 1);
+            return 1 + branchingFactor * nnaryTreeSize(branchingFactor, height - 1);
             
         }
        
@@ -195,8 +200,13 @@
     public int treeSum(Tree tree)
     {
         //TODO
+        int sum = tree.getValue();
         
-        return 1;
+        for (Tree children : tree.getChildren())
+        {
+            sum += treeSum(children);
+        }
+        return sum;
     }
 
     /**
